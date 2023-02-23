@@ -3,7 +3,7 @@ input.addEventListener('blur', validationInput);
 
 
 function validationInput({ target: { value: str, dataset: { length:minLength} } }) { 
-    if (Number(minLength) <= str.length) {
+    if (Number(minLength) === str.length) {
          resultValid("valid")
     } else { 
          resultInvalid('invalid')
