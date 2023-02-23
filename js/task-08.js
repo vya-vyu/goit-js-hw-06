@@ -1,14 +1,14 @@
 const formLogin = document.querySelector('.login-form');
 formLogin.addEventListener('submit', handleForm);
 
-
 function handleForm(event) {
 
     event.preventDefault();
-    const user = {}
-    const formData = new FormData(event.currentTarget);
     
-        formData.forEach((value, name) => {
+    const formData = new FormData(event.currentTarget);
+    const user = {};
+    formData.forEach((value, name) => {
+            
             if (value.length > 0) {
                 user[name] = value;
             }
@@ -16,9 +16,15 @@ function handleForm(event) {
                 alert("Всі поля повинні бути заповнені!")
             }
         });
-    
-    console.log(user);
+   
+    checkForm(user);
     formLogin.reset();
+}
+
+function checkForm(obj) { 
+    if (Object.keys(obj).length === formLogin.length - 1) { 
+        console.log(obj);
+    }  
 }
 
 
