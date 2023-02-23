@@ -12,9 +12,7 @@ function handleForm(event) {
             if (value.length > 0) {
                 user[name] = value;
             }
-            else {
-                alert("Всі поля повинні бути заповнені!")
-            }
+           
         });
    
     checkForm(user);
@@ -24,7 +22,10 @@ function handleForm(event) {
 function checkForm(obj) { 
     if (Object.keys(obj).length === formLogin.length - 1) { 
         console.log(obj);
-    }  
+    }else {
+        alert("Всі поля повинні бути заповнені!")
+        return;
+    }
 }
 
 
